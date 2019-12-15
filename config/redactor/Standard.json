@@ -1,0 +1,18 @@
+{
+    "buttons": [
+        "format",
+        "bold",
+        "italic",
+        "lists",
+        "link",
+        "file",
+        "horizontalrule",
+        "image",
+        "video"
+    ],
+    "plugins": [
+        "fullscreen"
+    ],
+    "imageResizable": true,
+    "imagePosition": true
+}

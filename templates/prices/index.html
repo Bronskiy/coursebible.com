@@ -1,0 +1,115 @@
+{% extends "_layout" %}
+
+{% block content %}
+{% include "_includes/_sub_header" with { title: entry.title, image: 'test' } %}
+
+<section class="schedule-section padding-bottom padding-top">
+  <div class="container">
+    <div class="schedule-wrapper bg_img" data-background="./assets/images/schedule/schedule--bg.png" style="background-image: url(&quot;./assets/images/schedule/schedule--bg.png&quot;);">
+      <div class="schedule-header text-center">
+        <h3 class="title text-md-left">
+          our class schedule
+        </h3>
+        <p class="text-md-right">courses schedule will be change by instructor</p>
+      </div>
+      <table class="schedule-table" role="table">
+        <thead role="rowgroup">
+          <tr role="row">
+            <th role="columnheader">Course Name</th>
+            <th role="columnheader">Course Duration</th>
+            <th role="columnheader">Class Time</th>
+            <th role="columnheader">Instructor</th>
+            <th role="columnheader">Note</th>
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <td role="cell" data-input="Course Name">Weight Loss</td>
+            <td role="cell" data-input="Course Duration">06 Mounth</td>
+            <td role="cell" data-input="Course Time">
+              <span class="class-date">Satday to Monday</span>
+              <span class="class-time">10.00 am - 02.00 pm</span>
+            </td>
+            <td role="cell" data-input="Instructor">
+              <div class="instructor">
+                <div class="thumb">
+                  <a href="#"><img src="assets/images/schedule/01.png" alt="schedule"></a>
+                </div>
+                <div class="content">
+                  <a href="#">shijika loo</a>
+                  <span>weight loss expert</span>
+                  <span>call - 0147854145</span>
+                </div>
+              </div>
+            </td>
+            <td role="cell" data-input="Note">pellentesque odio qu amet ut amet morbi </td>
+          </tr>
+          <tr role="row">
+            <td role="cell" data-input="Course Name">Meditation</td>
+            <td role="cell" data-input="Course Duration">08 Mounth</td>
+            <td role="cell" data-input="Course Time">
+              <span class="class-date">Satday to Monday</span>
+              <span class="class-time">10.00 am - 02.00 pm</span>
+            </td>
+            <td role="cell" data-input="Instructor">
+              <div class="instructor">
+                <div class="thumb">
+                  <a href="#"><img src="assets/images/schedule/02.png" alt="schedule"></a>
+                </div>
+                <div class="content">
+                  <a href="#">shijika loo</a>
+                  <span>weight loss expert</span>
+                  <span>call - 0147854145</span>
+                </div>
+              </div>
+            </td>
+            <td role="cell" data-input="Note">pellentesque odio qu amet ut amet morbi </td>
+          </tr>
+          <tr role="row">
+            <td role="cell" data-input="Course Name">Weight Lifting</td>
+            <td role="cell" data-input="Course Duration">03 Mounth</td>
+            <td role="cell" data-input="Course Duration">
+              <span class="class-date">Satday to Monday</span>
+              <span class="class-time">10.00 am - 02.00 pm</span>
+            </td>
+            <td role="cell" data-input="Instructor">
+              <div class="instructor">
+                <div class="thumb">
+                  <a href="#"><img src="assets/images/schedule/03.png" alt="schedule"></a>
+                </div>
+                <div class="content">
+                  <a href="#">shijika loo</a>
+                  <span>weight loss expert</span>
+                  <span>call - 0147854145</span>
+                </div>
+              </div>
+            </td>
+            <td role="cell" data-input="Note">pellentesque odio qu amet ut amet morbi </td>
+          </tr>
+          <tr role="row">
+            <td role="cell" data-input="Course Name">Body Building</td>
+            <td role="cell" data-input="Course Duration">1 Year</td>
+            <td role="cell" data-input="Course Time">
+              <span class="class-date">Satday to Monday</span>
+              <span class="class-time">10.00 am - 02.00 pm</span>
+            </td>
+            <td role="cell" data-input="Instructor">
+              <div class="instructor">
+                <div class="thumb">
+                  <a href="#"><img src="assets/images/schedule/04.png" alt="schedule"></a>
+                </div>
+                <div class="content">
+                  <a href="#">shijika loo</a>
+                  <span>weight loss expert</span>
+                  <span>call - 0147854145</span>
+                </div>
+              </div>
+            </td>
+            <td role="cell" data-input="Note">pellentesque odio qu amet ut amet morbi </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}

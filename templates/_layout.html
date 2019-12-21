@@ -22,171 +22,142 @@
 {% endif %}
 {% endif %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
-    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,400i,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/all.min.css">
-    <link rel="stylesheet" href="/assets/css/animate.css">
-    <link rel="stylesheet" href="/assets/css/lightcase.css">
-    <link rel="stylesheet" href="/assets/css/flaticon.css">
-    <link rel="stylesheet" href="/assets/css/swiper.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <link rel="stylesheet" href="/assets/css/lightcase.css">
+  <link rel="stylesheet" href="/assets/css/flaticon.css">
+  <link rel="stylesheet" href="/assets/css/swiper.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 
-    <title>{% if seoTitle is defined %}{{ seoTitle }} - {% elseif seoDefaultTitle is defined %}{{ seoDefaultTitle }} - {% endif %}{{ siteName }}</title>
+  <title>{% if seoTitle is defined %}{{ seoTitle }} - {% elseif seoDefaultTitle is defined %}{{ seoDefaultTitle }} - {% endif %}{{ siteName }}</title>
 
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-wrapper">
-            <img src="/assets/css/ajax-loader.gif" alt="preloader">
-        </div>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-wrapper">
+      <img src="/assets/css/ajax-loader.gif" alt="preloader">
     </div>
-    <!-- Preloader -->
-    <!-- Header Section Stars Here -->
-    <a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
-    <!-- Fixed Sidebar Section Ends Here -->
-    <!-- Header Section Stars Here -->
-    <header>
-        <div class="header-top d-none d-xl-block">
-            <div class="container">
-                <div class="header-wrapper">
-                    <div class="logo">
-                        <a href="#0"><img src="/assets/img/tiny-logo.png" alt="logo"></a>
-                    </div>
-                    <div class="header-info">
-                        <div class="info-item">
-                            <div class="info-thumb">
-                                <i class="flaticon-placeholder"></i>
-                            </div>
-                            <div class="info-content">
-                                <h6 class="title">location</h6>
-                                <span>Medino, NY 10012, USA</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-thumb">
-                                <i class="flaticon-email"></i>
-                            </div>
-                            <div class="info-content">
-                                <h6 class="title">email address</h6>
-                                <span>rolfson.alvis@hotmail.com</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-thumb">
-                                <i class="flaticon-call"></i>
-                            </div>
-                            <div class="info-content">
-                                <h6 class="title">Phone</h6>
-                                <span>(+555) 959-595-959</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  </div>
+  <!-- Preloader -->
+  <!-- Header Section Stars Here -->
+  <a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+  <!-- Fixed Sidebar Section Ends Here -->
+  <!-- Header Section Stars Here -->
+  <header>
+    <div class="header-top d-none d-xl-block">
+      <div class="container">
+        <div class="header-wrapper">
+          <div class="logo">
+            <a href="#0"><img src="/assets/img/tiny-logo.png" alt="logo"></a>
+          </div>
+          <div class="header-info">
+            <div class="info-item">
+              <div class="info-thumb">
+                <i class="flaticon-placeholder"></i>
+              </div>
+              <div class="info-content">
+                <h6 class="title">location</h6>
+                <span>Medino, NY 10012, USA</span>
+              </div>
             </div>
-        </div>
-        <div class="header-bottom">
-            <div class="container">
-                <div class="header-bottom-wrapper">
-                    <div class="logo d-xl-none">
-                        <a href="#0"><img src="/assets/temp_img/logo-two.png" alt="logo"></a>
-                    </div>
-                    <div class="header-bar d-xl-none">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ul class="menu">
-                        <li class="menu-item">
-                            <a href="#0" class="menu-item-link">Home</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="about.html" class="menu-item-link">About</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#0" class="menu-item-link">Class</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item">
-                                    <a href="classes.html" class="menu-item-link">Class Page</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="class-details.html" class="menu-item-link">Class Details</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="classes-schedule.html" class="menu-item-link">Class Schedule</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#0" class="menu-item-link">Trainer</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item">
-                                    <a href="trainers.html" class="menu-item-link">Trainer</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="trainer-details.html" class="menu-item-link">Trainer Details</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#0" class="menu-item-link">Blog</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item">
-                                    <a href="blog.html" class="menu-item-link">BLog</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="blog-details.html" class="menu-item-link">BLog Details</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#0" class="menu-item-link">Pages</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item">
-                                    <a href="login.html" class="menu-item-link">Login</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="registration.html" class="menu-item-link">Registration</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="four-not-four.html" class="menu-item-link">404</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="contact.html" class="menu-item-link">Contact</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="login.html" class="header-button">Get Started</a>
-                        </li>
-                    </ul>
-                    <div class="header-button-wrapper d-none d-xl-inline-flex">
-                        <a class="header-button" href="login.html">Get Started</a>
-                    </div>
-                </div>
+            <div class="info-item">
+              <div class="info-thumb">
+                <i class="flaticon-email"></i>
+              </div>
+              <div class="info-content">
+                <h6 class="title">email address</h6>
+                <span>rolfson.alvis@hotmail.com</span>
+              </div>
             </div>
+            <div class="info-item">
+              <div class="info-thumb">
+                <i class="flaticon-call"></i>
+              </div>
+              <div class="info-content">
+                <h6 class="title">Phone</h6>
+                <span>(+555) 959-595-959</span>
+              </div>
+            </div>
+          </div>
         </div>
-    </header>
-    <!-- Header Section Ends Here -->
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="container">
+        <div class="header-bottom-wrapper">
+          <div class="logo d-xl-none">
+            <a href="#0"><img src="/assets/temp_img/logo-two.png" alt="logo"></a>
+          </div>
+          <div class="header-bar d-xl-none">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-    {% block content %}
-    <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-    <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-    {% endblock %}
+          <ul class="menu">
+            {% nav entry in craft.entries.section('mainMenu').level(1).all() %}
+            {% if entry.hasDescendants() %}
+            <li class="menu-item {% if craft.app.request.segments|first  ==  entry.menuLink|split('/')|slice(1, 2)|join('/') %}active{% endif %}">
+              <a href="#0" class="menu-item-link">{{ entry.title }}</a>
 
-    {% include "_includes/_footer" %}
-    {% include "_includes/_js" %}
+              <ul class="sub-menu">
+                {% set subEntries = craft.entries.descendantOf(entry).level(2) %}
+
+                {% for entry in subEntries.all() %}
+                <li class="menu-item {% if craft.app.request.segments|first  ==  entry.menuLink|split('/')|slice(1, 2)|join('/') %}active{% endif %}">
+                  <a class="menu-item-link" href="{{ siteUrl|trim('/') }}{{ entry.menuLink }}">{{ entry.title }}</a>
+                </li>
+                {% if loop.last %}
+              </ul>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+            {% else %}
+            <li class="menu-item {% if craft.app.request.segments|first  ==  entry.menuLink|split('/')|slice(1, 2)|join('/') %}active{% endif %}">
+              <a class="menu-item-link" href="{{ siteUrl|trim('/') }}{{ entry.menuLink }}">{{ entry.title }}</a>
+            </li>
+            {% endif %}
+            {% endnav %}
+          </ul>
+
+          <div class="header-button-wrapper d-none d-xl-inline-flex">
+            <a class="header-button" href="login.html">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Section Ends Here -->
+
+  {% block content %}
+  <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+  <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+  {% endblock %}
+
+  {% include "_includes/_footer" %}
+  {% include "_includes/_js" %}
 </body>
 
 </html>

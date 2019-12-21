@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "78aab33d68e5941855660c641f3cf1bc",
+    "content-hash": "a74f53a840a689c4371f96cf9b1a2486",
     "packages": [
         {
             "name": "carlcs/craft-redactorcustomstyles",
@@ -392,11 +392,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.18.1",
+            "version": "3.3.18.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/3cbeb54e1ae91c1500fd166d65b48597c7c6381e",
-                "reference": "3cbeb54e1ae91c1500fd166d65b48597c7c6381e",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/47beab74bcc1e3341a19f69f0e20b5f4092bc877",
+                "reference": "47beab74bcc1e3341a19f69f0e20b5f4092bc877",
                 "shasum": ""
             },
             "require": {
@@ -406,7 +406,7 @@
                 "craftcms/server-check": "~1.1.0",
                 "creocoder/yii2-nested-sets": "~0.9.0",
                 "elvanto/litemoji": "^1.3.1",
-                "enshrined/svg-sanitize": "~0.13.0",
+                "enshrined/svg-sanitize": "~0.13.2",
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "ext-json": "*",
@@ -415,7 +415,7 @@
                 "ext-pcre": "*",
                 "ext-pdo": "*",
                 "ext-zip": "*",
-                "guzzlehttp/guzzle": "^6.3.0",
+                "guzzlehttp/guzzle": ">=6.3.0 <6.5.0 || ^6.5.1",
                 "league/flysystem": "^1.0.35",
                 "league/oauth2-client": "^2.2.1",
                 "mikehaertl/php-shellcommand": "^1.2.5",
@@ -474,15 +474,15 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-12-10T21:37:26+00:00"
+            "time": "2019-12-17T23:46:45+00:00"
         },
         {
             "name": "craftcms/contact-form",
-            "version": "2.2.5",
+            "version": "2.2.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/a645df88d757d620bc29bc6dd3d748374b791093",
-                "reference": "a645df88d757d620bc29bc6dd3d748374b791093",
+                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/680986ad8742b3e402d0f56756e3eb85c33d0b3d",
+                "reference": "680986ad8742b3e402d0f56756e3eb85c33d0b3d",
                 "shasum": ""
             },
             "require": {
@@ -526,7 +526,7 @@
                 "docs": "https://github.com/craftcms/contact-form/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
             },
-            "time": "2019-05-31T22:56:39+00:00"
+            "time": "2019-12-17T23:54:03+00:00"
         },
         {
             "name": "craftcms/contact-form-honeypot",
@@ -1033,11 +1033,11 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.0",
+            "version": "6.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5",
-                "reference": "dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0895c932405407fd3a7368b6910c09a24d26db11",
+                "reference": "0895c932405407fd3a7368b6910c09a24d26db11",
                 "shasum": ""
             },
             "require": {
@@ -1047,13 +1047,12 @@
                 "php": ">=5.5"
             },
             "suggest": {
-                "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.5-dev"
+                    "dev-master": "6.3-dev"
                 }
             },
             "autoload": {
@@ -1085,7 +1084,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-12-07T18:20:45+00:00"
+            "time": "2019-10-23T15:58:00+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -3058,11 +3057,11 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.4.2",
+            "version": "1.4.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/8b26da3760a6de80eb319493a7e4684f80097e41",
-                "reference": "8b26da3760a6de80eb319493a7e4684f80097e41",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/8cba623f3a5af2b31ad1c70565bde4698c2834b3",
+                "reference": "8cba623f3a5af2b31ad1c70565bde4698c2834b3",
                 "shasum": ""
             },
             "require": {
@@ -3094,15 +3093,15 @@
                 "clean",
                 "php"
             ],
-            "time": "2019-12-13T02:54:15+00:00"
+            "time": "2019-12-19T00:46:43+00:00"
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.32",
+            "version": "5.4.34",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/527aa7e8164ea1f2b6084b1483d8e89a5fc3311b",
-                "reference": "527aa7e8164ea1f2b6084b1483d8e89a5fc3311b",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/69568049a86e3d6869577c867beb91cc706d9984",
+                "reference": "69568049a86e3d6869577c867beb91cc706d9984",
                 "shasum": ""
             },
             "require": {
@@ -3159,7 +3158,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-12-13T03:10:14+00:00"
+            "time": "2019-12-19T00:35:44+00:00"
         },
         {
             "name": "voku/stop-words",

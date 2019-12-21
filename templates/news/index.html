@@ -1,0 +1,74 @@
+{% extends "_layout" %}
+
+
+
+{% if category is defined %}
+
+{% set entriesToShow = craft.entries.relatedTo(category).orderBy('postDate desc').limit(3) %}
+
+{% else %}
+
+{% set seoTitle = 'News' %}
+
+{% set entriesToShow = craft.entries().section('news').orderBy('postDate desc').limit(3) %}
+
+{% endif %}
+
+
+{% paginate entriesToShow as pageInfo, pageEntries %}
+
+
+{% block content %}
+{% include "_includes/_sub_header" with { title: "Новости", image: 'test' } %}
+
+
+<div class="blog-section-area padding-top padding-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <article>
+          <div class="blog-wrapper">
+            {% for entry in pageEntries %}
+            <div class="post-item style-two regular-item">
+              <div class="post-thumb">
+                {% set image = entry.newsImage.one() %}
+                <a href="{{ entry.url }}"><img src="{% if image %}{{ image.getUrl('image750x407') }}{% else %}https://via.placeholder.com/750x407?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}"></a>
+              </div>
+              <div class="post-content">
+                <div class="post-header">
+                  <h4 class="title"><a href="blog-details.html">{{ entry.title }}</a></h4>
+                  <p>{{ entry.newsBody|striptags|slice(0, 300) ~ '...'  }}</p>
+                </div>
+                <div class="meta-post d-flex flex-wrap justify-content-between">
+                  <div class="meta-date">
+                    <i class="far fa-calendar-alt"></i> <span>{{ entry.postDate | date("d M Y") }}</span>
+                  </div>
+                  <div class="meta-comment">
+                    <i class="far fa-comment"></i>{% for category in entry.newsCategory.limit(1).all() %} <span>{{ category.title }}</span>{% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+          <div class="inner-pagination-wrapper d-flex flex-wrap">
+            {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}"><i class="fas fa-angle-left"></i></a>{% endif %}
+            {% for page, url in pageInfo.getPrevUrls(5) %}
+            <a href="{{ url }}">{{ page }}</a>
+            {% endfor %}
+            <a class="active">{{ pageInfo.currentPage }}</a>
+            {% for page, url in pageInfo.getNextUrls(5) %}
+            <a href="{{ url }}">{{ page }}</a>
+            {% endfor %}
+            {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}"><i class="fas fa-angle-right"></i></a>{% endif %}
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        {% include "_includes/_sidebar" %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

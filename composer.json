@@ -2,8 +2,8 @@
   "require": {
     "carlcs/craft-redactorcustomstyles": "3.0.2",
     "codemonauts/craft-instagram-feed": "1.0.4",
-    "craftcms/cms": "3.3.18.1",
-    "craftcms/contact-form": "2.2.5",
+    "craftcms/cms": "3.3.18.3",
+    "craftcms/contact-form": "2.2.6",
     "craftcms/contact-form-honeypot": "1.0.2",
     "craftcms/element-api": "2.6.0",
     "craftcms/redactor": "2.4.0",

@@ -307,7 +307,7 @@ h6 {
     margin: 0;
     line-height: 1.4;
     color: #333333;
-    font-family: "Rajdhani", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 a,
@@ -417,7 +417,7 @@ input {
 }
 
 input:focus {
-    border: 1px solid #16120f;
+    border: 1px solid #36385d;
 }
 
 input[type="submit"] {
@@ -1084,7 +1084,7 @@ template {
 }
 
 .footer-section .footer-bottom p a:hover {
-    color: #16120f;
+    color: #36385d;
 }
 
 @media (max-width: 991px) {
@@ -1355,8 +1355,9 @@ template {
     .menu .menu-item .menu-item-link {
         padding: 5px;
         color: #ffffff;
-        font-weight: 700;
-        font-size: 14px;
+        font-weight: 400;
+        font-size: 15px;
+        text-transform: uppercase;
     }
     .menu .menu-item .sub-menu {
         position: absolute;
@@ -1425,8 +1426,8 @@ template {
         display: block;
         padding: 5px;
         color: #333333;
-        font-weight: 700;
-        font-size: 14px;
+        font-weight: 400;
+        font-size: 15px;
     }
     .menu .menu-item .menu-item-link:hover {
         color: #9a231f;
@@ -1731,9 +1732,9 @@ template {
     border-radius: 50%;
     color: #ffffff;
     margin: 5px;
-    background: #16120f;
+    background: #36385d;
     font-weight: 700;
-    font-family: "Rajdhani", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .inner-pagination-wrapper a:hover {
@@ -2040,7 +2041,7 @@ template {
 
 .widget.widget-post ul li .post-title {
     color: #333333;
-    font-family: "Rajdhani", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     line-height: 24px;
     font-size: 16px;
@@ -2732,7 +2733,7 @@ template {
     font-size: 14px;
     text-transform: uppercase;
     color: #777777;
-    font-family: "Rajdhani";
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
 
@@ -2772,7 +2773,7 @@ template {
 
 .expert-item .expert-content .expert-link {
     width: 94px;
-    background: #16120f;
+    background: #36385d;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -4360,7 +4361,7 @@ template {
         width: 100%;
         display: block;
         white-space: nowrap;
-        font-family: "Rajdhani" sans-serif, sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         color: #333333;
         font-size: 18px;
@@ -4380,7 +4381,7 @@ template {
         padding: 12px 10px;
         font-size: 1.125rem;
         line-height: 1.5rem;
-        font-family: "Rajdhani", sans-serif;
+        font-family: 'Montserrat', sans-serif;
         color: #333333;
         border-right: 1px solid #e5e5e5;
         border-bottom: 1px solid #e5e5e5;
@@ -5481,7 +5482,7 @@ template {
 @media (min-width: 1200px) {
     .header-button {
         width: 397px;
-        background: #16120f;
+        background: #36385d;
         line-height: 90px;
         color: #ffffff;
         text-align: center;
@@ -5499,9 +5500,9 @@ template {
         background: #9a231f;
         width: 0;
         height: 0;
-        border-right: 45.5px solid #16120f;
+        border-right: 45.5px solid #36385d;
         border-top: 91px solid #9a231f;
-        border-bottom: 45.5px solid #16120f;
+        border-bottom: 45.5px solid #36385d;
     }
 }
 
@@ -5511,7 +5512,7 @@ template {
 
 @media (max-width: 1199px) {
     .menu-item .header-button {
-        background: #16120f;
+        background: #36385d;
         padding: 5px 10px;
         font-size: 14px;
         color: #ffffff;

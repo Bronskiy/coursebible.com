@@ -1,5 +1,26 @@
 {% extends "_layout" %}
 
 {% block content %}
-<h1>Media</h1>
+{% include "_includes/_sub_header" with { title: 'Media', image: 'test', breadcrumb: 'on' } %}
+
+
+<!-- {% for entry in craft.entries().section('media').all() %}
+
+
+
+{% set image = entry.mediaPhotos.one() %}
+<div class="img_col">
+  <div class="bg" style="background-image: url({% if image %}{{ image.getUrl('image368x170') }}{% else %}https://via.placeholder.com/368x170?text=No&nbsp;Image{% endif %});"></div>
+</div>
+
+{% endfor %}
+<hr> -->
+
+{% for item in craft.instagram.getFeed() %}
+<a href="https://www.instagram.com/p/{{ item.shortcode }}/" target="_blank">
+  <img src="{{ item.src }}" alt="" />
+</a>
+<p>{{ item.caption }}</p>
+<p>{{ item.likes }} Likes / {{ item.comments }} Comments</p>
+{% endfor %}
 {% endblock %}

@@ -56,7 +56,7 @@
   <!-- Preloader -->
   <div class="preloader">
     <div class="preloader-wrapper">
-      <img src="/assets/css/ajax-loader.gif" alt="preloader">
+      <img src="/assets/img/atom.svg" alt="preloader">
     </div>
   </div>
   <!-- Preloader -->
@@ -69,7 +69,7 @@
       <div class="container">
         <div class="header-wrapper">
           <div class="logo">
-            <a href="#0"><img src="/assets/img/tiny-logo.png" alt="logo"></a>
+            <a href="/"><img src="/assets/img/tiny-logo.png" alt="logo"></a>
           </div>
           <div class="header-info">
             <div class="info-item">
@@ -78,7 +78,7 @@
               </div>
               <div class="info-content">
                 <h6 class="title">location</h6>
-                <span>Medino, NY 10012, USA</span>
+                <span>{{ globalAddress.textUnformatted }}</span>
               </div>
             </div>
             <div class="info-item">
@@ -87,7 +87,7 @@
               </div>
               <div class="info-content">
                 <h6 class="title">email address</h6>
-                <span>rolfson.alvis@hotmail.com</span>
+                <span>{{ globalEmail.textFormatted }}</span>
               </div>
             </div>
             <div class="info-item">
@@ -96,7 +96,8 @@
               </div>
               <div class="info-content">
                 <h6 class="title">Phone</h6>
-                <span>(+555) 959-595-959</span>
+                <span>{{ globalPhone1.textUnformatted }}</span><br>
+                <span>{{ globalPhone2.textUnformatted }}</span>
               </div>
             </div>
           </div>

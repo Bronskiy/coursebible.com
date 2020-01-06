@@ -1,5 +1,45 @@
 {% extends "_layout" %}
 
 {% block content %}
-<h1>{{ entry.title }}</h1>
+{% include "_includes/_sub_header" with { title: entry.title, image: 'test', breadcrumb: 'on' } %}
+<div class="details-blog-section padding-top padding-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <article class="details-blog-wrapper">
+                        <div class="post-item style-two style-three">
+                          {% set image = entry.newsImage.one() %}
+                          {% if image %}
+                            <div class="post-thumb">
+                              <a href="{{ entry.url }}">
+                                <img src="{{ image.getUrl('image750x407') }}" alt="{{ entry.title }}">
+                              </a>
+                            </div>
+                            {% endif %}
+                            <div class="post-content">
+                                <div class="post-header">
+                                    <h4 class="title">{{ entry.title }}</h4>
+                                    {{ entry.newsBody }}
+                                </div>
+
+                                <div class="meta-post d-flex flex-wrap justify-content-between">
+                                    <div class="meta-date">
+                                        <i class="far fa-calendar-alt"></i> <span>{{ entry.postDate | date("d M Y") }}</span>
+                                    </div>
+                                    <div class="meta-comment text-right">
+                                        <i class="fas fa-tag"></i>{% for category in entry.newsCategory.limit(1).all() %} <span><a href="{{ category.url }}">{{ category.title }}</a></span>{% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+                <div class="col-lg-4">
+                  {% include "_includes/_sidebar" %}
+
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

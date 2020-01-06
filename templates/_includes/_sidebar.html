@@ -1,91 +1,42 @@
 <aside class="sidebar">
-    <div class="widget widget-search">
-        <form class="widget-form">
-            <input type="text" placeholder="Search in here">
-            <label for="w1"><i class="fas fa-search"></i></label>
-            <input type="submit" value="Search" id="w1">
-        </form>
-    </div>
-    <div class="widget widget-category">
-        <h5 class="widget-title">news categories</h5>
-        <ul>
-            <li>
-                <a href="#">gym<span>32</span></a>
-            </li>
-            <li>
-                <a href="#">body building<span>55</span></a>
-            </li>
-            <li>
-                <a href="#">yoga<span>77</span></a>
-            </li>
-            <li>
-                <a href="#">boxing<span>90</span></a>
-            </li>
-            <li>
-                <a href="#">fitness<span>09</span></a>
-            </li>
-            <li>
-                <a href="#">class<span>34</span></a>
-            </li>
-        </ul>
-    </div>
-    <div class="widget widget-post">
-        <h5 class="widget-title">popular news</h5>
-        <ul>
-            <li>
-                <a href="#" class="post-title">Daily Report: More Self-Driving Cars Take to the
-                    Streets</a>
-                <div class="meta-post">
-                    <div class="meta-date">
-                        <a href="#"><i class="far fa-calendar-alt"></i> <span>29 May 2019</span></a>
-                    </div>
-                    <div class="meta-comment">
-                        <a href="#"><i class="far fa-comment"></i> <span>Comment</span></a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="#" class="post-title">Daily Report: More Self-Driving Cars Take to the
-                    Streets</a>
-                <div class="meta-post">
-                    <div class="meta-date">
-                        <a href="#"><i class="far fa-calendar-alt"></i> <span>29 May 2019</span></a>
-                    </div>
-                    <div class="meta-comment">
-                        <a href="#"><i class="far fa-comment"></i> <span>Comment</span></a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="#" class="post-title">Daily Report: More Self-Driving Cars Take to the
-                    Streets</a>
-                <div class="meta-post">
-                    <div class="meta-date">
-                        <a href="#"><i class="far fa-calendar-alt"></i> <span>29 May 2019</span></a>
-                    </div>
-                    <div class="meta-comment">
-                        <a href="#"><i class="far fa-comment"></i> <span>Comment</span></a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="widget widget-tags">
-        <h5 class="widget-title">tags</h5>
-        <div class="tag-item-wrapper">
-            <a href="#" class="tag-item active">boxing</a>
-            <a href="#" class="tag-item">Fitness</a>
-            <a href="#" class="tag-item">class offers</a>
-            <a href="#" class="tag-item">build</a>
+
+  <div class="widget widget-category">
+    <h5 class="widget-title">news categories</h5>
+    <ul>
+      {% nav category in craft.categories.group('news').all() %}
+      {% set entryCount = craft.entries.relatedTo(category).count() %}
+      <li>
+        <a href="{{ category.url }}">{{ category.title }}<span>{{ entryCount }}</span></a>
+      </li>
+      {% endnav %}
+    </ul>
+  </div>
+  <div class="widget widget-post">
+    <h5 class="widget-title">Последние новости</h5>
+    <ul>
+      {% for entry in craft.entries().section('news').limit(3) %}
+      <li>
+        <a href="#" class="post-title">Daily Report: More Self-Driving Cars Take to theStreets</a>
+        <div class="meta-post">
+          <div class="meta-date">
+            <a href="#"><i class="far fa-calendar-alt"></i> <span>29 May 2019</span></a>
+          </div>
+          <div class="meta-comment">
+            <a href="#"><i class="far fa-comment"></i> <span>Comment</span></a>
+          </div>
         </div>
-    </div>
-    <div class="widget widget-banner">
-        <div class="widget-banner-thumb">
-            <img src="assets/images/blog/07.jpg" alt="blog-banner">
-        </div>
-        <div class="widget-banner-content">
-            <h4>add banner</h4>
-            <a href="#" class="custom-button">buy now</a>
-        </div>
-    </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- <div class="widget widget-banner">
+  <div class="widget-banner-thumb">
+  <img src="assets/images/blog/07.jpg" alt="blog-banner">
+</div>
+<div class="widget-banner-content">
+<h4>add banner</h4>
+<a href="#" class="custom-button">buy now</a>
+</div>
+</div> -->
 </aside>

@@ -19,7 +19,7 @@
 
 
 {% block content %}
-{% include "_includes/_sub_header" with { title: "Новости", image: 'test' } %}
+{% include "_includes/_sub_header" with { title: "Новости", image: 'test', breadcrumb: 'on' } %}
 
 
 <div class="blog-section-area padding-top padding-bottom">
@@ -36,15 +36,17 @@
               </div>
               <div class="post-content">
                 <div class="post-header">
-                  <h4 class="title"><a href="blog-details.html">{{ entry.title }}</a></h4>
+                  <h4 class="title"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
                   <p>{{ entry.newsBody|striptags|slice(0, 300) ~ '...'  }}</p>
                 </div>
                 <div class="meta-post d-flex flex-wrap justify-content-between">
                   <div class="meta-date">
-                    <i class="far fa-calendar-alt"></i> <span>{{ entry.postDate | date("d M Y") }}</span>
+                    <i class="far fa-calendar-alt"></i>
+                    <span>{{ entry.postDate | date("d M Y") }}</span>
                   </div>
                   <div class="meta-comment">
-                    <i class="far fa-comment"></i>{% for category in entry.newsCategory.limit(1).all() %} <span>{{ category.title }}</span>{% endfor %}
+                    <i class="far fa-comment"></i>
+                    {% for category in entry.newsCategory.limit(1).all() %} <span><a href="{{ category.url }}">{{ category.title }}</a></span>{% endfor %}
                   </div>
                 </div>
               </div>

@@ -2,16 +2,17 @@
 {% set title = "404" %}
 
 {% block content %}
-<div class="uk-height-viewport uk-cover-background uk-vertical-align uk-text-center" style="margin-top: -65px">
-  <div class="uk-vertical-align-middle uk-container-center uk-panel-box uk-panel-box-secondary">
+{% include "_includes/_sub_header" with { title: 'Страница не найдена', image: 'off', breadcrumb: 'off' } %}
 
-    <i class="tm-error-icon uk-icon-7s-way"></i>
-    <br>
-    <h1 class="uk-h2 tm-error-headline">404</h1>
-    <h3 class="uk-margin-large-top">Страница не найдена</h2>
 
-    <p>Возникла ошибка или страница, которую вы ищете, не существует.<br class="uk-hidden-small"> <a href="javascript:history.go(-1)">Вернуться назад</a>, или перейти на <a href="/">Главную</a>.</p>
-
-  </div>
-</div>
+<section class="four-not-four-section">
+        <div class="container">
+            <div class="four-not-four-section-wrapper text-center">
+                <h2 class="title">404</h2>
+                <h3 class="sub-title">Страница не найдена</h3>
+                <p>Возникла ошибка или страница, которую вы ищете, не существует.</p>
+                <a href="/" class="custom-button">Перейти на главную</a>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -1,9 +1,12 @@
+{% if image != 'off' %}
 <section class="page-header bg_img" data-background="{{ image }}" style="background-image: url(&quot;{{ image }}&quot;);">
   <div class="container">
     <h3 class="title"><span class="shape-wrapper"><span class="shape"></span>{{ title }}<span class="shape"></span></span></h3>
   </div>
 </section>
+{% endif %}
 
+{% if breadcrumb != 'off' %}
 <div class="breadcrumb-section">
   <div class="container">
     <div class="breadcrumb-wrapper">
@@ -23,3 +26,4 @@
     </div>
   </div>
 </div>
+{% endif %}

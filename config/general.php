@@ -26,6 +26,9 @@ return [
         // Whether to save the project config out to config/project.yaml
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => false,
+        
+        'convertFilenamesToAscii' => true,
+        'limitAutoSlugsToAscii' => true,
     ],
 
     // Dev environment settings
@@ -45,4 +48,5 @@ return [
         // Set this to `false` to prevent administrative changes from being made on production
         'allowAdminChanges' => true,
     ],
+
 ];

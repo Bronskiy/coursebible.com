@@ -1,26 +1,52 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include "_includes/_sub_header" with { title: 'Media', image: 'test', breadcrumb: 'on' } %}
+{% include "_includes/_sub_header" with { title: entry.title, image: 'test', breadcrumb: 'on' } %}
 
+<section class="blog-section padding-bottom padding-top">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="title">{{ entry.title }}</h2>
+      <p>Фотографии процесса обучения и мероприятий</p>
+    </div>
+    {% set entryAssets = entry.mediaPhotos.all() %}
+    {% if entryAssets|length %}
+    <div class="row mb-30-none blog-section-wrapper">
+      {% for image in entryAssets %}
+      <div class="col-xl-4 col-md-6">
+        <div class="post-item">
+          <div class="post-thumb">
+            <a href="#0"><img src="{{ image.getUrl() }}" alt="фото {{ loop.index }}"></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
 
-<!-- {% for entry in craft.entries().section('media').all() %}
-
-
-
-{% set image = entry.mediaPhotos.one() %}
-<div class="img_col">
-  <div class="bg" style="background-image: url({% if image %}{{ image.getUrl('image368x170') }}{% else %}https://via.placeholder.com/368x170?text=No&nbsp;Image{% endif %});"></div>
-</div>
-
-{% endfor %}
-<hr> -->
-
-{% for item in craft.instagram.getFeed() %}
-<a href="https://www.instagram.com/p/{{ item.shortcode }}/" target="_blank">
-  <img src="{{ item.src }}" alt="" />
-</a>
-<p>{{ item.caption }}</p>
-<p>{{ item.likes }} Likes / {{ item.comments }} Comments</p>
-{% endfor %}
-{% endblock %}
+<section class="blog-section padding-bottom padding-top">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="title">Instagram</h2> <a href="{{ globalInstagram.textFormatted }}"><i></i></a>
+    </div>
+    <div class="row mb-30-none blog-section-wrapper">
+      {% for item in craft.instagram.getFeed() %}
+      <div class="col-xl-4 col-md-6">
+        <div class="post-item">
+          <div class="post-thumb">
+            <a href="https://www.instagram.com/p/{{ item.shortcode }}/" target="_blank">
+              <img src="{{ item.src }}" alt="{{ item.caption|striptags|slice(0, 30) }}" />
+            </a>
+          </div>
+          <div class="post-content">
+            <h4 class="title"><a href="#">{{ item.caption }}</a></h4>
+          </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endblock %}

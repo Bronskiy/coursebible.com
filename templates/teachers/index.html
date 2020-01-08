@@ -1,5 +1,40 @@
 {% extends "_layout" %}
+{% set entriesToShow = craft.entries().section('teachers').orderBy('postDate desc').limit(12) %}
+{% paginate entriesToShow as pageInfo, pageEntries %}
 
 {% block content %}
-<h1>Teachers </h1>
+{% include "_includes/_sub_header" with { title: 'Преподаватели', image: 'test', breadcrumb: 'on' } %}
+<section class="expert-trainers padding-bottom padding-top">
+  <div class="container">
+    <div class="expert-item-area">
+
+      {% for entry in pageEntries %}
+      <div class="expert-item">
+        <div class="expert-thumb">
+          <a href="{{ entry.url }}">
+            {% set image = entry.teachersPhoto.one() %}
+            <img src="{% if image %}{{ image.getUrl('image350x403') }}{% else %}https://via.placeholder.com/350x403?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}">
+          </a>
+        </div>
+        <div class="expert-content">
+          <div class="expert-info">
+            <h4 class="sub-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
+            <span>{{ entry.teachersPosition }}</span>
+          </div>
+          <a class="expert-link" href="{{ entry.url }}">
+            <i class="fas fa-link"></i>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- <div class="inner-pagination-wrapper d-flex flex-wrap justify-content-center">
+      <a href="trainers.html"><i class="fas fa-angle-left"></i></a>
+      <a href="trainers.html">03</a>
+      <a href="trainers.html" class="active">04</a>
+      <a href="trainers.html">05</a>
+      <a href="trainers.html"><i class="fas fa-angle-right"></i></a>
+    </div> -->
+  </div>
+</section>
 {% endblock %}

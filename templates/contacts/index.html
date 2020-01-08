@@ -4,64 +4,37 @@
 {% include "_includes/_sub_header" with { title: entry.title, image: 'test', breadcrumb: 'on' } %}
 <section class="contact-section padding-top padding-bottom">
         <div class="container">
-
+          <div class="maps">
+            {{ globalMap.commonText|raw }}
+          </div>
             <!--Map End-->
             <div class="branches-section-wrapper">
                 <div class="row mb-30-none justify-content-center">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-md-6">
                         <div class="brance-item">
-                            <h5 class="title">USA Branch</h5>
-                            <ul>
-                                <li>4920 Northwest 21st Avenue</li>
-                                <li>Medford, MN 55049, USA</li>
-                                <li>phone: +0884-222-124</li>
-                                <li>www.multikon.com</li>
-                            </ul>
+                            <h5 class="title">Адрес</h5>
+                            <p>{{ globalAddress.textUnformatted }}</p>
+                                <h5 class="title">Телефоны</h5>
+                                <p>
+                                  <a href="tel:{{ globalPhone1.textFormatted }}">{{ globalPhone1.textUnformatted }}</a><br>
+                                  <a href="tel:{{ globalPhone2.textFormatted }}">{{ globalPhone2.textUnformatted }}</a>
+                                  </p>
+                                    <h5 class="title">Email</h5>
+                                    <p>
+                                      <a href="mailto:{{ globalEmail.textFormatted }}">{{ globalEmail.textFormatted }}</a>
+                                      </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="brance-item">
-                            <h5 class="title">Europe Branch</h5>
-                            <ul>
-                                <li>4920 Northwest 21st Avenue</li>
-                                <li>Medford, MN 55049, USA</li>
-                                <li>phone: +0884-222-124</li>
-                                <li>www.multikon.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="brance-item">
-                            <h5 class="title">Asia Branch</h5>
-                            <ul>
-                                <li>4920 Northwest 21st Avenue</li>
-                                <li>Medford, MN 55049, USA</li>
-                                <li>phone: +0884-222-124</li>
-                                <li>www.multikon.com</li>
-                            </ul>
-                        </div>
+
+                    <div class="col-md-6">
+                      <div class="contact-us-form">
+                          <h3 class="title">Напишите нам</h3>
+                          {% include "_includes/_contact_form" %}
+                      </div>
                     </div>
                 </div>
             </div>
-            <div class="contact-us-form">
-                <h3 class="title">send your messages</h3>
-                <form action="#" class="comment-form" id="contact_form_submit">
-                    <div class="row mb-30-none">
-                        <div class="col-sm-6 form-group">
-                            <input type="text" placeholder="Name*" name="name" id="name">
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <input type="text" placeholder="Email*" name="email" id="email">
-                        </div>
-                        <div class="col-sm-12 form-group">
-                            <textarea placeholder="Your Message" name="message" id="message"></textarea>
-                        </div>
-                        <div class="col-sm-12 form-group">
-                            <input type="submit" value="Post Comment">
-                        </div>
-                    </div>
-                </form>
-            </div>
+
         </div>
     </section>
 {% endblock %}

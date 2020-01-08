@@ -480,11 +480,11 @@ input[type="submit"] {
 }
 
 .padding-top {
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .padding-bottom {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 
 .section-header {
@@ -506,7 +506,6 @@ input[type="submit"] {
     padding-bottom: 34px;
     margin-bottom: 20px;
     position: relative;
-    text-transform: capitalize;
 }
 
 @media (min-width: 768px) {
@@ -531,15 +530,6 @@ input[type="submit"] {
     height: 14px;
     background: url(img/plane.png) no-repeat center center;
     background-size: cover;
-}
-
-@media (min-width: 992px) {
-    .padding-top {
-        padding-top: 120px;
-    }
-    .padding-bottom {
-        padding-bottom: 120px;
-    }
 }
 
 .mb-30-none {
@@ -1235,7 +1225,6 @@ template {
     font-weight: 600;
     color: #ffffff;
     padding: 0;
-    text-transform: capitalize;
     background-color: #f0c4bb;
 }
 
@@ -1345,7 +1334,8 @@ template {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        width: calc(100% - 397px);
+        /* width: calc(100% - 397px); */
+        width: 100%;
         margin-left: -15px;
     }
     .menu .menu-item {
@@ -1565,7 +1555,6 @@ template {
 
 .banner-section .banner-content-container .banner-content .title {
     margin-bottom: 11px;
-    text-transform: capitalize;
     margin-top: -8px;
     font-size: 28px;
     line-height: 36px;
@@ -1759,7 +1748,6 @@ template {
 }
 
 .widget .widget-title {
-    text-transform: capitalize;
     margin-bottom: 6px;
 }
 
@@ -1809,7 +1797,6 @@ template {
 .widget-download ul li a,
 .widget-tour ul li a {
     font-weight: 600;
-    text-transform: capitalize;
     color: inherit;
     padding: 8px 0;
     line-height: 26px;
@@ -1886,7 +1873,6 @@ template {
 .widget-banner .widget-banner-content h4 {
     font-size: 24px;
     color: #ffffff;
-    text-transform: capitalize;
     margin-bottom: 25px;
 }
 
@@ -1921,7 +1907,7 @@ template {
 
 .tour-details-item .title,
 .tour-details-item .sub-title {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .tour-details-item .title {
@@ -1992,7 +1978,7 @@ template {
 
 .widget-category ul li a {
     font-weight: 600;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     color: inherit;
     padding: 8px 8px 8px 20px;
     line-height: 26px;
@@ -2127,7 +2113,7 @@ template {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     border: 1px solid #e5e5e5;
     color: #777777;
 }
@@ -2190,7 +2176,7 @@ template {
 
 .body-building-item .body-building-content .building-content .title {
     font-size: 24px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .body-building-item .body-building-content .building-category {
@@ -2263,7 +2249,7 @@ template {
     color: #fff;
     font-size: 16px;
     margin: 0;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 @media (min-width: 576px) {
@@ -2676,7 +2662,7 @@ template {
 
 .feature-header .title {
     font-weight: 700;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     margin-bottom: 10px;
     -webkit-transition: all ease 0.3s;
     -moz-transition: all ease 0.3s;
@@ -2805,7 +2791,7 @@ template {
 
 .expert-item .expert-content .expert-info span {
     color: #ffffff;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-size: 14px;
 }
 
@@ -2862,7 +2848,7 @@ template {
 }
 
 .schedule-header .title {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 @media (min-width: 576px) {
@@ -2915,7 +2901,7 @@ template {
 .newslater-section .newslater-header .title {
     margin: 0 0 5px;
     color: #ffffff;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     margin-top: -9px;
 }
 
@@ -3328,7 +3314,7 @@ template {
 }
 
 .bmi-header .title {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     margin-bottom: 9px;
 }
 
@@ -3469,7 +3455,7 @@ template {
     border-bottom: 1px solid transparent;
     padding: 0;
     justify-content: space-between;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .about-bmi li .bmi-rate,
@@ -3582,7 +3568,7 @@ template {
 }
 
 .package-item .package-content ul {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     margin-bottom: 26px;
 }
 
@@ -3914,7 +3900,7 @@ template {
     text-align: center;
     margin-top: -9px;
     margin-bottom: 15px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 @media (min-width: 576px) {
@@ -4093,7 +4079,7 @@ template {
 /*Contact Section*/
 
 .contact-us-form .title {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-size: 30px;
     margin-bottom: 25px;
 }
@@ -4114,15 +4100,8 @@ template {
 /*Map*/
 
 .maps {
-    height: 300px;
+    height: 400px;
 }
-
-@media (min-width: 576px) {
-    .maps {
-        height: 595px;
-    }
-}
-
 
 /*Brance items*/
 
@@ -4315,7 +4294,7 @@ template {
 }
 
 .trainer-item .trainer-content span {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     color: #f0c4bb;
     display: inline-block;
     margin-bottom: 15px;
@@ -4400,10 +4379,10 @@ template {
         border-bottom: 1px solid #e5e5e5;
         font-family: "Open Sans", sans-serif;
     }
-    .schedule-table tbody td:last-child {
+    /* .schedule-table tbody td:last-child {
         border-right: none;
         border-bottom: none;
-    }
+    } */
 }
 
 .class-date,
@@ -5025,7 +5004,7 @@ template {
     display: block;
     font-size: 18px;
     color: #333333;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     margin-top: 5px;
 }
 
@@ -5268,7 +5247,7 @@ template {
 .leave-comment .title,
 .comments-section .title {
     margin-bottom: 20px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 @media (min-width: 576px) {
@@ -5441,7 +5420,7 @@ template {
     padding: 0 40px;
     font-weight: 700;
     border: 1px solid #f0c4bb;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -5525,5 +5504,5 @@ template {
     }
 }
 
-
+input#phone-required { display: none; }
 /*# sourceMappingURL=style.css.map */

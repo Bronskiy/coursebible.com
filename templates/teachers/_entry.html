@@ -1,0 +1,31 @@
+{% extends "_layout" %}
+
+{% block content %}
+{% include "_includes/_sub_header" with { title: entry.title, image: 'test', breadcrumb: 'on' } %}
+<div class="trainer-details padding-bottom padding-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <article>
+          <div class="trainer-area">
+            <div class="trainer-item">
+              <div class="trainer-thumb">
+                {% set image = entry.teachersPhoto.one() %}
+                <img src="{% if image %}{{ image.getUrl('image350x403') }}{% else %}https://via.placeholder.com/350x403?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}">
+              </div>
+              <div class="trainer-content">
+                <h3 class="title">{{ entry.title }}</h3>
+                <span>{{ entry.teachersPosition }}</span>
+                {{ entry.teachersDescription }}
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        {% include "_includes/_sidebar" %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

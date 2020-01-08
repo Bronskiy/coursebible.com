@@ -1,7 +1,7 @@
 <aside class="sidebar">
 
   <div class="widget widget-category">
-    <h5 class="widget-title">news categories</h5>
+    <h5 class="widget-title">Новости</h5>
     <ul>
       {% nav category in craft.categories.group('news').all() %}
       {% set entryCount = craft.entries.relatedTo(category).count() %}
@@ -11,32 +11,47 @@
       {% endnav %}
     </ul>
   </div>
-  <div class="widget widget-post">
-    <h5 class="widget-title">Последние новости</h5>
+  <div class="widget widget-popular">
+    <h5 class="widget-title">Секции</h5>
     <ul>
-      {% for entry in craft.entries().section('news').limit(3) %}
+      {% for entry in craft.entries().section('sections').limit(3) %}
       <li>
-        <a href="#" class="post-title">Daily Report: More Self-Driving Cars Take to theStreets</a>
-        <div class="meta-post">
-          <div class="meta-date">
-            <a href="#"><i class="far fa-calendar-alt"></i> <span>29 May 2019</span></a>
-          </div>
-          <div class="meta-comment">
-            <a href="#"><i class="far fa-comment"></i> <span>Comment</span></a>
-          </div>
+        <div class="widget-popular-thumb">
+          <a href="{{ entry.url }}">
+            {% set image = entry.sectionImage.one() %}
+            <a href="{{ entry.url }}"><img src="{% if image %}{{ image.getUrl('image63x62') }}{% else %}https://via.placeholder.com/63x62?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}"></a>
+          </a>
         </div>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+        <div class="widget-popular-content">
+          <h6 class="title"><a href="{{ entry.url }}">{{ entry.title }}</a></h6>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="widget widget-post">
+      <h5 class="widget-title">Новые статьи</h5>
+      <ul>
+        {% for entry in craft.entries().section('news').limit(3) %}
+        <li>
+          <a href="{{ entry.url }}" class="post-title">{{ entry.title }}</a>
+          <div class="meta-post">
+            <div class="meta-date">
+              <i class="far fa-calendar-alt"></i> <span>{{ entry.postDate | date("d M Y") }}</span>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
 
-  <!-- <div class="widget widget-banner">
-  <div class="widget-banner-thumb">
-  <img src="assets/images/blog/07.jpg" alt="blog-banner">
-</div>
-<div class="widget-banner-content">
-<h4>add banner</h4>
-<a href="#" class="custom-button">buy now</a>
+    <!-- <div class="widget widget-banner">
+    <div class="widget-banner-thumb">
+    <img src="assets/images/blog/07.jpg" alt="blog-banner">
+  </div>
+  <div class="widget-banner-content">
+  <h4>add banner</h4>
+  <a href="#" class="custom-button">buy now</a>
 </div>
 </div> -->
 </aside>

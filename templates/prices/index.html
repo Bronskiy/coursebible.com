@@ -7,108 +7,42 @@
   <div class="container">
     <div class="schedule-wrapper bg_img" data-background="./assets/images/schedule/schedule--bg.png" style="background-image: url(&quot;./assets/images/schedule/schedule--bg.png&quot;);">
       <div class="schedule-header text-center">
-        <h3 class="title text-md-left">
-          our class schedule
-        </h3>
-        <p class="text-md-right">courses schedule will be change by instructor</p>
+        <h3 class="title text-md-left">{{ entry.title }}</h3>
+        {{ entry.pricesDescription }}
       </div>
       <table class="schedule-table" role="table">
         <thead role="rowgroup">
           <tr role="row">
-            <th role="columnheader">Course Name</th>
-            <th role="columnheader">Course Duration</th>
-            <th role="columnheader">Class Time</th>
-            <th role="columnheader">Instructor</th>
-            <th role="columnheader">Note</th>
+            <th role="columnheader">Наименование услуг</th>
+            <th role="columnheader" colspan="2">
+              <span class="class-date">Стоимость</span>
+              <span class="class-time">8 занятий / 12 занятий</span>
+            </th>
+            <th role="columnheader">Разово</th>
+            <th role="columnheader">Индивидуально</th>
           </tr>
         </thead>
         <tbody role="rowgroup">
+          {% for block in entry.pricesTable.all() %}
           <tr role="row">
-            <td role="cell" data-input="Course Name">Weight Loss</td>
-            <td role="cell" data-input="Course Duration">06 Mounth</td>
-            <td role="cell" data-input="Course Time">
-              <span class="class-date">Satday to Monday</span>
-              <span class="class-time">10.00 am - 02.00 pm</span>
-            </td>
-            <td role="cell" data-input="Instructor">
-              <div class="instructor">
-                <div class="thumb">
-                  <a href="#"><img src="assets/images/schedule/01.png" alt="schedule"></a>
-                </div>
-                <div class="content">
-                  <a href="#">shijika loo</a>
-                  <span>weight loss expert</span>
-                  <span>call - 0147854145</span>
-                </div>
-              </div>
-            </td>
-            <td role="cell" data-input="Note">pellentesque odio qu amet ut amet morbi </td>
+            {% set relatedEntry = craft.entries.section('sections').relatedTo(block).first() %}
+            <td role="cell" data-input="Название секции"><a href="{{ relatedEntry.url }}">{{ loop.index }}. {{ relatedEntry.title }}</a></td>
+            {% for row in block.stoimost %}
+            <td role="cell" data-input="8 занятий">{{ row.eightZanyatiy ? row.eightZanyatiy : '-' }}</td>
+            <td role="cell" data-input="12 занятий">{{ row.twelveZanyatiy ? row.twelveZanyatiy : '-' }}</td>
+            {% endfor %}
+            <td role="cell" data-input="Разовая стоимость">{{ block.razovo ? block.razovo : '-' }}</td>
+            <td role="cell" data-input="Индивидуальное занятие">{{ block.individualNo ? block.individualNo : '-' }}</td>
           </tr>
-          <tr role="row">
-            <td role="cell" data-input="Course Name">Meditation</td>
-            <td role="cell" data-input="Course Duration">08 Mounth</td>
-            <td role="cell" data-input="Course Time">
-              <span class="class-date">Satday to Monday</span>
-              <span class="class-time">10.00 am - 02.00 pm</span>
-            </td>
-            <td role="cell" data-input="Instructor">
-              <div class="instructor">
-                <div class="thumb">
-                  <a href="#"><img src="assets/images/schedule/02.png" alt="schedule"></a>
-                </div>
-                <div class="content">
-                  <a href="#">shijika loo</a>
-                  <span>weight loss expert</span>
-                  <span>call - 0147854145</span>
-                </div>
-              </div>
-            </td>
-            <td role="cell" data-input="Note">pellentesque odio qu amet ut amet morbi </td>
-          </tr>
-          <tr role="row">
-            <td role="cell" data-input="Course Name">Weight Lifting</td>
-            <td role="cell" data-input="Course Duration">03 Mounth</td>
-            <td role="cell" data-input="Course Duration">
-              <span class="class-date">Satday to Monday</span>
-              <span class="class-time">10.00 am - 02.00 pm</span>
-            </td>
-            <td role="cell" data-input="Instructor">
-              <div class="instructor">
-                <div class="thumb">
-                  <a href="#"><img src="assets/images/schedule/03.png" alt="schedule"></a>
-                </div>
-                <div class="content">
-                  <a href="#">shijika loo</a>
-                  <span>weight loss expert</span>
-                  <span>call - 0147854145</span>
-                </div>
-              </div>
-            </td>
-            <td role="cell" data-input="Note">pellentesque odio qu amet ut amet morbi </td>
-          </tr>
-          <tr role="row">
-            <td role="cell" data-input="Course Name">Body Building</td>
-            <td role="cell" data-input="Course Duration">1 Year</td>
-            <td role="cell" data-input="Course Time">
-              <span class="class-date">Satday to Monday</span>
-              <span class="class-time">10.00 am - 02.00 pm</span>
-            </td>
-            <td role="cell" data-input="Instructor">
-              <div class="instructor">
-                <div class="thumb">
-                  <a href="#"><img src="assets/images/schedule/04.png" alt="schedule"></a>
-                </div>
-                <div class="content">
-                  <a href="#">shijika loo</a>
-                  <span>weight loss expert</span>
-                  <span>call - 0147854145</span>
-                </div>
-              </div>
-            </td>
-            <td role="cell" data-input="Note">pellentesque odio qu amet ut amet morbi </td>
+          {% endfor %}
+          <tr>
+            <td colspan="5"><strong>Пробное занятие(первое) - бесплатно</strong></td>
           </tr>
         </tbody>
       </table>
+      <br>
+      <h3>Акции</h3>
+      {{ entry.pricesSales }}
     </div>
   </div>
 </section>

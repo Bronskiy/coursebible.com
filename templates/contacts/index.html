@@ -3,38 +3,35 @@
 {% block content %}
 {% include "_includes/_sub_header" with { title: entry.title, image: 'test', breadcrumb: 'on' } %}
 <section class="contact-section padding-top padding-bottom">
-        <div class="container">
-          <div class="maps">
-            {{ globalMap.commonText|raw }}
+  <div class="container">
+    <div class="maps">
+      {{ globalMap.commonText|raw }}
+    </div>
+    <div class="branches-section-wrapper">
+      <div class="row mb-30-none justify-content-center">
+        <div class="col-md-6">
+          <div class="brance-item">
+            <h5 class="title">Адрес</h5>
+            <p>{{ globalAddress.textUnformatted }}</p>
+            <h5 class="title">Телефоны</h5>
+            <p>
+              <a href="tel:{{globalPhone1.textUnformatted|replace('/[^0-9+]/', '') }}">{{ globalPhone1.textUnformatted }}</a><br>
+              <a href="tel:{{ globalPhone2.textUnformatted|replace('/[^0-9+]/', '') }}">{{ globalPhone2.textUnformatted }}</a>
+            </p>
+            <h5 class="title">Email</h5>
+            <p>
+              <a href="mailto:{{ globalEmail.textFormatted }}">{{ globalEmail.textFormatted }}</a>
+            </p>
           </div>
-            <!--Map End-->
-            <div class="branches-section-wrapper">
-                <div class="row mb-30-none justify-content-center">
-                    <div class="col-md-6">
-                        <div class="brance-item">
-                            <h5 class="title">Адрес</h5>
-                            <p>{{ globalAddress.textUnformatted }}</p>
-                                <h5 class="title">Телефоны</h5>
-                                <p>
-                                  <a href="tel:{{ globalPhone1.textFormatted }}">{{ globalPhone1.textUnformatted }}</a><br>
-                                  <a href="tel:{{ globalPhone2.textFormatted }}">{{ globalPhone2.textUnformatted }}</a>
-                                  </p>
-                                    <h5 class="title">Email</h5>
-                                    <p>
-                                      <a href="mailto:{{ globalEmail.textFormatted }}">{{ globalEmail.textFormatted }}</a>
-                                      </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="contact-us-form">
-                          <h3 class="title">Напишите нам</h3>
-                          {% include "_includes/_contact_form" %}
-                      </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </section>
+        <div class="col-md-6">
+          <div class="contact-us-form">
+            <h3 class="title">Напишите нам</h3>
+            {% include "_includes/_contact_form" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

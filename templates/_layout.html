@@ -23,7 +23,6 @@
 {% endif %}
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,33 +36,28 @@
   <meta name="msapplication-TileColor" content="#2b5797">
   <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,400i,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
-
   <link rel="stylesheet" href="/assets/libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/flaticon/flaticon.css">
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/animate.css">
   <link rel="stylesheet" href="/assets/css/lightcase.css">
-  <link rel="stylesheet" href="/assets/css/flaticon.css">
+  {% if (craft.request.getSegment('1') == '') %}
   <link rel="stylesheet" href="/assets/css/swiper.min.css">
+  {% endif %}
+  {% if (craft.request.getSegment('1') == 'media') %}
+  <link rel="stylesheet" href="/assets/libs/fancybox/jquery.fancybox.min.css" />
+  {% endif %}
   <link rel="stylesheet" href="/assets/css/style.css">
-
   <title>{% if seoTitle is defined %}{{ seoTitle }} - {% elseif seoDefaultTitle is defined %}{{ seoDefaultTitle }} - {% endif %}{{ siteName }}</title>
-
 </head>
-
 <body>
-  <!-- Preloader -->
   <div class="preloader">
     <div class="preloader-wrapper">
       <img src="/assets/img/atom.svg" alt="preloader">
     </div>
   </div>
-  <!-- Preloader -->
-  <!-- Header Section Stars Here -->
-  <a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
-  <!-- Fixed Sidebar Section Ends Here -->
-  <!-- Header Section Stars Here -->
+  <a href="#" class="scrollToTop"><i class="flaticon-up-arrow"></i></a>
   <header>
     <div class="header-top d-none d-xl-block">
       <div class="container">
@@ -74,30 +68,30 @@
           <div class="header-info">
             <div class="info-item">
               <div class="info-thumb">
-                <i class="flaticon-placeholder"></i>
+                <i class="flaticon-pin"></i>
               </div>
               <div class="info-content">
-                <h6 class="title">location</h6>
-                <span>{{ globalAddress.textUnformatted }}</span>
+                <h6 class="title">Адрес</h6>
+                <a href="{{ globalAddressLink.textUnformatted }}" target="_blank"><span>{{ globalAddress.textUnformatted }}</span></a>
               </div>
             </div>
             <div class="info-item">
               <div class="info-thumb">
-                <i class="flaticon-email"></i>
+                <i class="flaticon-mail"></i>
               </div>
               <div class="info-content">
-                <h6 class="title">email address</h6>
-                <span>{{ globalEmail.textFormatted }}</span>
+                <h6 class="title">Email</h6>
+                <a href="mailto:{{ globalEmail.textFormatted }}"><span>{{ globalEmail.textFormatted }}</span></a>
               </div>
             </div>
             <div class="info-item">
               <div class="info-thumb">
-                <i class="flaticon-call"></i>
+                <i class="flaticon-phone-call"></i>
               </div>
               <div class="info-content">
-                <h6 class="title">Phone</h6>
-                <span>{{ globalPhone1.textUnformatted }}</span><br>
-                <span>{{ globalPhone2.textUnformatted }}</span>
+                <h6 class="title">Телефоны</h6>
+                <a href="tel:{{globalPhone1.textUnformatted|replace('/[^0-9+]/', '') }}"><span>{{ globalPhone1.textUnformatted }}</span></a><br>
+                <a href="tel:{{ globalPhone2.textUnformatted|replace('/[^0-9+]/', '') }}"><span>{{ globalPhone2.textUnformatted }}</span></a>
               </div>
             </div>
           </div>
@@ -107,15 +101,14 @@
     <div class="header-bottom">
       <div class="container">
         <div class="header-bottom-wrapper">
-          <div class="logo d-xl-none">
-            <a href="#0"><img src="/assets/temp_img/logo-two.png" alt="logo"></a>
+          <div class="mobile-logo logo d-xl-none">
+            <a href="/"><img src="/assets/img/tiny-logo.png" alt="logo"></a>
           </div>
           <div class="header-bar d-xl-none">
             <span></span>
             <span></span>
             <span></span>
           </div>
-
           <ul class="menu">
             {% nav entry in craft.entries.section('mainMenu').level(1).all() %}
             {% if entry.hasDescendants() %}
@@ -142,7 +135,6 @@
             {% endif %}
             {% endnav %}
           </ul>
-
           <!-- <div class="header-button-wrapper d-none d-xl-inline-flex">
             <a class="header-button" href="login.html">Get Started</a>
           </div> -->
@@ -150,15 +142,14 @@
       </div>
     </div>
   </header>
-  <!-- Header Section Ends Here -->
-
   {% block content %}
   <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
   <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
   {% endblock %}
-
   {% include "_includes/_footer" %}
   {% include "_includes/_js" %}
+  {% if (craft.request.getSegment('1') == 'media') %}
+  <script src="/assets/libs/fancybox/jquery.fancybox.min.js"></script>
+  {% endif %}
 </body>
-
 </html>

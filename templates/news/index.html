@@ -1,7 +1,5 @@
 {% extends "_layout" %}
 
-
-
 {% if category is defined %}
 
 {% set entriesToShow = craft.entries.relatedTo(category).orderBy('postDate desc').limit(3) %}
@@ -14,13 +12,10 @@
 
 {% endif %}
 
-
 {% paginate entriesToShow as pageInfo, pageEntries %}
-
 
 {% block content %}
 {% include "_includes/_sub_header" with { title: "Новости", image: 'test', breadcrumb: 'on' } %}
-
 
 <div class="blog-section-area padding-top padding-bottom">
   <div class="container">
@@ -41,18 +36,17 @@
                 </div>
                 <div class="meta-post d-flex flex-wrap justify-content-between">
                   <div class="meta-date">
-                    <i class="far fa-calendar-alt"></i>
+                    <i class="flaticon-calendar"></i>
                     <span>{{ entry.postDate | date("d M Y") }}</span>
                   </div>
                   <div class="meta-comment">
-                    <i class="far fa-comment"></i>
+                    <i class="flaticon-clipboard"></i>
                     {% for category in entry.newsCategory.limit(1).all() %} <span><a href="{{ category.url }}">{{ category.title }}</a></span>{% endfor %}
                   </div>
                 </div>
               </div>
             </div>
             {% endfor %}
-
           </div>
           <div class="inner-pagination-wrapper d-flex flex-wrap">
             {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}"><i class="fas fa-angle-left"></i></a>{% endif %}

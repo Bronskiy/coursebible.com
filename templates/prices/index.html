@@ -1,11 +1,11 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include "_includes/_sub_header" with { title: entry.title, image: 'test', breadcrumb: 'on' } %}
+{% include "_includes/_sub_header" with { title: entry.title, image: 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
 
 <section class="schedule-section padding-bottom padding-top">
   <div class="container">
-    <div class="schedule-wrapper bg_img" data-background="./assets/images/schedule/schedule--bg.png" style="background-image: url(&quot;./assets/images/schedule/schedule--bg.png&quot;);">
+    <div class="schedule-wrapper bg_img" data-background="/assets/img/schedule--bg.png" style="background-image: url(&quot;/assets/img/schedule--bg.png&quot;);">
       <div class="schedule-header text-center">
         <h3 class="title text-md-left">{{ entry.title }}</h3>
         {{ entry.pricesDescription }}
@@ -25,8 +25,13 @@
         <tbody role="rowgroup">
           {% for block in entry.pricesTable.all() %}
           <tr role="row">
-            {% set relatedEntry = craft.entries.section('sections').relatedTo(block).first() %}
-            <td role="cell" data-input="Название секции"><a href="{{ relatedEntry.url }}">{{ loop.index }}. {{ relatedEntry.title }}</a></td>
+            {% set relatedEntries = craft.entries.section('sections').relatedTo(block).all() %}
+            <td role="cell" data-input="Название секции">
+              {% for relatedEntry in relatedEntries %}
+              <span><a href="{{ relatedEntry.url }}">{{ relatedEntry.title }}</a></span>
+              {% if not loop.last %}<hr>{% endif %}
+              {% endfor %}
+            </td>
             {% for row in block.stoimost %}
             <td role="cell" data-input="8 занятий">{{ row.eightZanyatiy ? row.eightZanyatiy : '-' }}</td>
             <td role="cell" data-input="12 занятий">{{ row.twelveZanyatiy ? row.twelveZanyatiy : '-' }}</td>

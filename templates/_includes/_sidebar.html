@@ -1,5 +1,4 @@
 <aside class="sidebar">
-
   <div class="widget widget-category">
     <h5 class="widget-title">Новости</h5>
     <ul>
@@ -24,34 +23,24 @@
         </div>
         <div class="widget-popular-content">
           <h6 class="title"><a href="{{ entry.url }}">{{ entry.title }}</a></h6>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="widget widget-post">
-      <h5 class="widget-title">Новые статьи</h5>
-      <ul>
-        {% for entry in craft.entries().section('news').limit(3) %}
-        <li>
-          <a href="{{ entry.url }}" class="post-title">{{ entry.title }}</a>
-          <div class="meta-post">
-            <div class="meta-date">
-              <i class="far fa-calendar-alt"></i> <span>{{ entry.postDate | date("d M Y") }}</span>
-            </div>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <!-- <div class="widget widget-banner">
-    <div class="widget-banner-thumb">
-    <img src="assets/images/blog/07.jpg" alt="blog-banner">
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
-  <div class="widget-banner-content">
-  <h4>add banner</h4>
-  <a href="#" class="custom-button">buy now</a>
-</div>
-</div> -->
+  <div class="widget widget-post">
+    <h5 class="widget-title">Новые статьи</h5>
+    <ul>
+      {% for entry in craft.entries().section('news').limit(3) %}
+      <li>
+        <a href="{{ entry.url }}" class="post-title">{{ entry.title }}</a>
+        <div class="meta-post">
+          <div class="meta-date">
+            <i class="flaticon-calendar"></i> <span>{{ entry.postDate | date("d M Y") }}</span>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </aside>

@@ -7,7 +7,6 @@
 <section class="expert-trainers padding-bottom padding-top">
   <div class="container">
     <div class="expert-item-area">
-
       {% for entry in pageEntries %}
       <div class="expert-item">
         <div class="expert-thumb">
@@ -21,9 +20,7 @@
             <h4 class="sub-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
             <span>{{ entry.teachersPosition }}</span>
           </div>
-          <a class="expert-link" href="{{ entry.url }}">
-            <i class="fas fa-link"></i>
-          </a>
+          <a class="expert-link" href="{{ entry.url }}"><i class="flaticon-share-link"></i></a>
         </div>
       </div>
       {% endfor %}

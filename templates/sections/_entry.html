@@ -1,28 +1,28 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include "_includes/_sub_header" with { title: entry.title, image: 'test', breadcrumb: 'on' } %}
+{% include "_includes/_sub_header" with { title: entry.title, image: 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
 <div class="expert-trainer-details padding-bottom padding-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mb-5 mb-lg-0">
-                    <article>
-                        <div class="expert-single-item">
-                            <div class="expert-thumb">
-                              {% set image = entry.sectionImage.one() %}
-                                <img src="{% if image %}{{ image.getUrl('image750x407') }}{% else %}https://via.placeholder.com/750x407?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}">
-                            </div>
-                            <div class="expert-single-content">
-                                <h3 class="title">{{ entry.title }}</h3>
-                                {{ entry.sectionDescription }}
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-4">
-                  {% include "_includes/_sidebar" %}
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <article>
+          <div class="expert-single-item">
+            <div class="expert-thumb">
+              {% set image = entry.sectionImage.one() %}
+              <img src="{% if image %}{{ image.getUrl('image750x407') }}{% else %}https://via.placeholder.com/750x407?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}">
             </div>
-        </div>
+            <div class="expert-single-content">
+              <h3 class="title">{{ entry.title }}</h3>
+              {{ entry.sectionDescription }}
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        {% include "_includes/_sidebar" %}
+      </div>
     </div>
+  </div>
+</div>
 {% endblock %}

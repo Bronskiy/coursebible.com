@@ -529,7 +529,6 @@ input[type="submit"] {
 }
 
 .section-header .title::after {
-    position: absolute;
     content: "\f119";
     font-family: Flaticon;
     bottom: 0;
@@ -541,8 +540,6 @@ input[type="submit"] {
     position: relative;
     display: block;
     color: #9a231f;
-    background: url(/assets/img/plane.png) no-repeat center center;
-    background-size: cover;
 }
 
 .mb-30-none {
@@ -2791,7 +2788,7 @@ template {
 
 .expert-item .expert-content .expert-info {
     width: calc(100% - 94px);
-    padding: 30px;
+    padding: 30px 0 30px 15px;
     background: #fcf9d8;
 }
 
@@ -2801,13 +2798,13 @@ template {
 
 @media (min-width: 576px) {
     .expert-item .expert-content .expert-info .sub-title {
-        font-size: 20px;
+        font-size: 1rem;
     }
 }
 
 @media (min-width: 576px) and (min-width: 992px) {
     .expert-item .expert-content .expert-info .sub-title {
-        font-size: 24px;
+        font-size: 1rem;
     }
 }
 
@@ -3660,7 +3657,7 @@ template {
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(54, 56, 93, 0.5);
 }
 
 .page-header .title {
@@ -3758,7 +3755,7 @@ template {
     left: calc(100% + 5px);
     width: 8px;
     height: 8px;
-    background: #f0c4bb;
+    background: #9a231f;
 }
 
 
@@ -4634,8 +4631,9 @@ template {
 
 .comment-form .form-group input[type="submit"] {
     width: auto;
-    background-color: #f0c4bb;
+    background-color: #9a231f;
     padding: 0 45px;
+    border: 0;
 }
 
 .comment-form .form-group input,

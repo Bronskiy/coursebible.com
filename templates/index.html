@@ -35,7 +35,7 @@
         </div>
         <div class="feature-slider">
             <div class="swiper-wrapper">
-              {% for entry in craft.entries().section('sections').limit(12) %}
+              {% for entry in craft.entries().section('sections').limit(12).all() %}
                 <div class="swiper-slide">
                   <div class="feature-item">
                     <div class="feature-thumb">
@@ -51,7 +51,7 @@
                         <a href="{{ entry.url }}">Подробнее</a>
                       </div>
                       <div class="feature-footer d-flex flex-wrap align-items-center justify-content-between">
-                        {% set relatedEntry = craft.entries.section('teachers').relatedTo(entry).first() %}
+                        {% set relatedEntry = craft.entries.section('teachers').relatedTo(entry).one() %}
                         {% if relatedEntry|length %}
                         <div class="d-flex flex-wrap">
                           <div class="feature-author-thumb">
@@ -183,7 +183,7 @@
             <p>Актуальная информация о нашей организации и услугах</p>
         </div>
         <div class="row mb-30-none justify-content-center blog-section-wrapper">
-          {% for entry in craft.entries().section('news').limit(12) %}
+          {% for entry in craft.entries().section('news').limit(12).all() %}
             <div class="col-xl-4 col-md-6">
                 <div class="post-item">
                     <div class="post-thumb">
@@ -221,7 +221,7 @@
         </div>
         <div class="expert-slider">
             <div class="swiper-wrapper">
-              {% for entry in craft.entries().section('teachers').limit(12) %}
+              {% for entry in craft.entries().section('teachers').limit(12).all() %}
                 <div class="swiper-slide">
                     <div class="expert-item">
                         <div class="expert-thumb">

@@ -2774,6 +2774,7 @@ template {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     margin: 0 25px -58px;
+    height: 141px;
 }
 
 .expert-item .expert-content .expert-link {
@@ -2788,8 +2789,9 @@ template {
 
 .expert-item .expert-content .expert-info {
     width: calc(100% - 94px);
-    padding: 30px 0 30px 15px;
+    padding: 15px 0 15px 15px;
     background: #fcf9d8;
+    max-width: 206px;
 }
 
 .expert-item .expert-content .expert-info .sub-title a {

@@ -1,10 +1,11 @@
 {% extends "_layout" %}
 
-{% set entriesToShow = craft.entries().section('sections').limit(12) %}
+{% set entriesToShow = craft.entries().section('sections').limit(99) %}
 {% paginate entriesToShow as pageInfo, pageEntries %}
 
 {% block content %}
-{% include "_includes/_sub_header" with { title: 'Секции', image: 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
+{% set image = entry.commonBackground.one() %}
+{% include "_includes/_sub_header" with { title: entry.title, image: image ? image.getUrl() : 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
 <section class="feature-section padding-bottom padding-top">
   <div class="container">
     <div class="style-feature">
@@ -24,7 +25,7 @@
             <a href="{{ entry.url }}">Подробнее</a>
           </div>
           <div class="feature-footer d-flex flex-wrap align-items-center justify-content-between">
-            {% set relatedEntry = craft.entries.section('teachers').relatedTo(entry).first() %}
+            {% set relatedEntry = craft.entries.section('teachers').relatedTo(entry).one() %}
             {% if relatedEntry|length %}
             <div class="d-flex flex-wrap">
               <div class="feature-author-thumb">

@@ -42,10 +42,10 @@
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/animate.css">
   <link rel="stylesheet" href="/assets/css/lightcase.css">
-  {% if (craft.request.getSegment('1') == '') %}
+  {% if (craft.app.request.getSegment('1') == '') %}
   <link rel="stylesheet" href="/assets/css/swiper.min.css">
   {% endif %}
-  {% if (craft.request.getSegment('1') == 'media') %}
+  {% if (craft.app.request.getSegment('1') == 'media') %}
   <link rel="stylesheet" href="/assets/libs/fancybox/jquery.fancybox.min.css" />
   {% endif %}
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -148,7 +148,7 @@
   {% endblock %}
   {% include "_includes/_footer" %}
   {% include "_includes/_js" %}
-  {% if (craft.request.getSegment('1') == 'media') %}
+  {% if (craft.app.request.getSegment('1') == 'media') %}
   <script src="/assets/libs/fancybox/jquery.fancybox.min.js"></script>
   {% endif %}
 </body>

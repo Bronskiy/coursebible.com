@@ -4,7 +4,8 @@
 {% paginate entriesToShow as pageInfo, pageEntries %}
 
 {% block content %}
-{% include "_includes/_sub_header" with { title: 'Услуги', image: 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
+{% set image = entry.commonBackground.one() %}
+{% include "_includes/_sub_header" with { title: entry.title, image: image ? image.getUrl() : 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
 <section class="feature-section padding-bottom padding-top">
   <div class="container">
     <div class="style-feature">
@@ -24,6 +25,9 @@
           </div>
         </div>
       </div>
+      <!-- {% if loop.index is divisible by(3) %}
+      <div class="clearfix"></div>
+      {% endif %} -->
       {% endfor %}
     </div>
     <!-- <div class="inner-pagination-wrapper d-flex flex-wrap justify-content-center">

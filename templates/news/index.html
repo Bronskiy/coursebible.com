@@ -5,14 +5,16 @@
 {% if category is defined %}
 
 {% set entriesToShow = craft.entries.relatedTo(category).orderBy('postDate desc').limit(3) %}
-{% include "_includes/_sub_header" with { title: category.title, image: 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
+{% set image = category.commonBackground.one() %}
+{% include "_includes/_sub_header" with { title: category.title, image: image ? image.getUrl() : 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
 
 {% else %}
 
 {% set seoTitle = 'News' %}
 
 {% set entriesToShow = craft.entries().section('news').orderBy('postDate desc').limit(3) %}
-{% include "_includes/_sub_header" with { title: "Новости", image: 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
+{% set image = entry.commonBackground.one() %}
+{% include "_includes/_sub_header" with { title: entry.title, image: image ? image.getUrl() : 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
 
 {% endif %}
 

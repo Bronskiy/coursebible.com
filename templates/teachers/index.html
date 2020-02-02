@@ -1,9 +1,10 @@
 {% extends "_layout" %}
-{% set entriesToShow = craft.entries().section('teachers').orderBy('postDate desc').limit(12) %}
+{% set entriesToShow = craft.entries().section('teachers').orderBy('postDate asc').limit(99) %}
 {% paginate entriesToShow as pageInfo, pageEntries %}
 
 {% block content %}
-{% include "_includes/_sub_header" with { title: 'Преподаватели', image: 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
+{% set image = entry.commonBackground.one() %}
+{% include "_includes/_sub_header" with { title: entry.title, image: image ? image.getUrl() : 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
 <section class="expert-trainers padding-bottom padding-top">
   <div class="container">
     <div class="expert-item-area">

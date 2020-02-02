@@ -1,7 +1,8 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include "_includes/_sub_header" with { title: entry.title, image: 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
+{% set image = entry.commonBackground.one() %}
+{% include "_includes/_sub_header" with { title: entry.title, image: image ? image.getUrl() : 'https://via.placeholder.com/1920x715', breadcrumb: 'on' } %}
 
 <section class="blog-section padding-bottom padding-top">
   <div class="container">

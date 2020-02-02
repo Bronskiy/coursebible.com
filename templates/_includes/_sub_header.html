@@ -19,19 +19,19 @@
           <li>
             <a href="/">Главная</a>
           </li>
-          {% if (craft.request.getSegment('1') == 'services' and craft.request.getSegment('2') != '') %}
+          {% if (craft.app.request.getSegment('1') == 'services' and craft.app.request.getSegment('2') != '') %}
           <li>
-            <a href="/service">Услуги</a>
+            <a href="/services">Услуги</a>
           </li>
-          {% elseif (craft.request.getSegment('1') == 'sections' and craft.request.getSegment('2') != '') %}
+          {% elseif (craft.app.request.getSegment('1') == 'sections' and craft.app.request.getSegment('2') != '') %}
           <li>
             <a href="/sections">Секции</a>
           </li>
-          {% elseif (craft.request.getSegment('1') == 'news' and craft.request.getSegment('2') != '') %}
+          {% elseif (craft.app.request.getSegment('1') == 'news' and craft.app.request.getSegment('2') != '') %}
           <li>
             <a href="/news">Новости</a>
           </li>
-          {% elseif (craft.request.getSegment('1') == 'teachers' and craft.request.getSegment('2') != '') %}
+          {% elseif (craft.app.request.getSegment('1') == 'teachers' and craft.app.request.getSegment('2') != '') %}
           <li>
             <a href="/teachers">Преподаватели</a>
           </li>

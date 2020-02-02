@@ -1,5 +1,18 @@
 {% extends "_layout" %}
+{% set title = "Спасибо" %}
 
 {% block content %}
-<h1>Thanks</h1>
+{% include "_includes/_sub_header" with { title: 'Ваше сообщение получено', image: 'off', breadcrumb: 'off' } %}
+
+
+<section class="four-not-four-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="title">{{ title }}</h2>
+                <h3 class="sub-title">Ваше сообщение получено</h3>
+                <p>Наш менеджер свяжется с вами в течение одного рабочего дня.</p>
+                <a href="/" class="custom-button">Перейти на главную</a>
+            </div>
+        </div>
+    </section>
 {% endblock %}

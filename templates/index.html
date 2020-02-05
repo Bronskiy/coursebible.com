@@ -7,7 +7,7 @@
     <div class="container">
         <div class="banner-content-container">
             <div class="banner-content">
-                <h3 class="sub-title"><span class="shape-wrapper"><span class="shape"></span>{{ entry.bannerSubTitle }}<span class="shape"></span></span></h3>
+                <h3 class="sub-title">{{ entry.bannerSubTitle }}</h3>
                 <h1 class="title">{{ entry.bannerTitle }}</h1>
                 <p>{{ entry.bannerText }}</p>
                 {% if entry.bannerButtons|length %}
@@ -35,7 +35,7 @@
         </div>
         <div class="feature-slider">
             <div class="swiper-wrapper">
-              {% for entry in craft.entries().section('sections').limit(12).all() %}
+              {% for entry in craft.entries().section('sections').order('RAND()').limit(12).all() %}
                 <div class="swiper-slide">
                   <div class="feature-item">
                     <div class="feature-thumb">
@@ -75,8 +75,6 @@
         </div>
     </div>
 </section>
-<!-- Feature Section Ends Here -->
-<!-- Schedule Section Starts Here -->
 <section class="schedule-section padding-bottom" id="schedule">
     <div class="container">
       <div class="schedule-wrapper bg_img" data-background="/assets/img/schedule--bg.png" style="background-image: url(&quot;/assets/img/schedule--bg.png&quot;);">
@@ -110,7 +108,6 @@
                       <span> - </span>
                       {% endif %}
                     </td>
-
                     <td role="cell" data-input="Вторник">
                       {% if block.vtornik|length %}
                       {% for relatedEntry in block.vtornik.all() %}
@@ -120,9 +117,7 @@
                       {% else %}
                       <span> - </span>
                       {% endif %}
-
                     </td>
-
                     <td role="cell" data-input="Среда">
                       {% if block.sreda|length %}
                       {% for relatedEntry in block.sreda.all() %}
@@ -133,7 +128,6 @@
                       <span> - </span>
                       {% endif %}
                     </td>
-
                     <td role="cell" data-input="Четверг">
                       {% if block.chetverg|length %}
                       {% for relatedEntry in block.chetverg.all() %}
@@ -144,7 +138,6 @@
                       <span> - </span>
                       {% endif %}
                     </td>
-
                     <td role="cell" data-input="Пятница">
                       {% if block.pyatnitsa|length %}
                       {% for relatedEntry in block.pyatnitsa.all() %}
@@ -155,7 +148,6 @@
                       <span> - </span>
                       {% endif %}
                     </td>
-
                     <td role="cell" data-input="Суббота">
                       {% if block.subbota|length %}
                       {% for relatedEntry in block.subbota.all() %}
@@ -173,9 +165,6 @@
         </div>
     </div>
 </section>
-<!-- Schedule Section Ends Here -->
-
-<!-- Blog Section Starts Here -->
 <section class="blog-section padding-bottom padding-top">
     <div class="container">
         <div class="section-header">
@@ -188,7 +177,7 @@
                 <div class="post-item">
                     <div class="post-thumb">
                       {% set image = entry.newsImage.one() %}
-                        <a href="{{ entry.url }}"><img src="{% if image %}{{ image.getUrl() }}{% else %}https://via.placeholder.com/596x334?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}"></a>
+                        <a href="{{ entry.url }}"><img src="{% if image %}{{ image.getUrl('image596x334') }}{% else %}https://via.placeholder.com/596x334?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}"></a>
                     </div>
                     <div class="post-content">
                         <h4 class="title"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
@@ -205,8 +194,6 @@
         </div>
     </div>
 </section>
-
-<!-- Expert Section Starts Here -->
 <section class="expert-trainers padding-bottom padding-top">
     <div class="container">
         <div class="section-header-wrapper">
@@ -221,7 +208,7 @@
         </div>
         <div class="expert-slider">
             <div class="swiper-wrapper">
-              {% for entry in craft.entries().section('teachers').limit(12).all() %}
+              {% for entry in craft.entries().section('teachers').order('RAND()').limit(99).all() %}
                 <div class="swiper-slide">
                     <div class="expert-item">
                         <div class="expert-thumb">
@@ -240,10 +227,8 @@
                     </div>
                 </div>
                 {% endfor %}
-
             </div>
         </div>
     </div>
 </section>
-<!-- Expert Section Ends Here -->
 {% endblock %}

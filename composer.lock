@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd8c21aa7d66cd6d63c3873d011da5ce",
+    "content-hash": "45bf5b95afd7916d216d468b9b4b0404",
     "packages": [
         {
             "name": "carlcs/craft-redactorcustomstyles",
@@ -387,11 +387,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.1",
+            "version": "3.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/9a9d5a5d1f512105042edb55b2d0468de4e72f3d",
-                "reference": "9a9d5a5d1f512105042edb55b2d0468de4e72f3d",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/8436bfe373e81a2cc9d551feb4f9bad8d0fbdefb",
+                "reference": "8436bfe373e81a2cc9d551feb4f9bad8d0fbdefb",
                 "shasum": ""
             },
             "require": {
@@ -472,7 +472,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-01-29T21:03:20+00:00"
+            "time": "2020-02-04T00:47:42+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -3909,11 +3909,11 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.38",
+            "version": "5.4.39",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/0991729d5ca364078b00fe0e107f87ec0d53b0d7",
-                "reference": "0991729d5ca364078b00fe0e107f87ec0d53b0d7",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/e462e8985a80cbd927765fd7e09f52bb103c9797",
+                "reference": "e462e8985a80cbd927765fd7e09f52bb103c9797",
                 "shasum": ""
             },
             "require": {
@@ -3970,7 +3970,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2020-01-14T13:30:41+00:00"
+            "time": "2020-01-30T15:12:06+00:00"
         },
         {
             "name": "voku/stop-words",

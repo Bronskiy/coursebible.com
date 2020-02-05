@@ -12,11 +12,14 @@
 <form method="post" class="comment-form" id="contact_form_submit" action="" accept-charset="UTF-8">
   {{ csrfInput() }}
   <input type="hidden" name="action" value="contact-form/send">
-  {{ redirectInput('contacts/thanks') }}
+  <input type="hidden" name="redirect" value="{{ 'contacts/thanks'|hash }}">
   <div class="row mb-30-none">
     <div class="col-sm-12 form-group">
       <input id="from-name" type="text" placeholder="Имя*" required name="fromName" value="{{ message.fromName ?? '' }}">
       {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+    </div>
+    <div class="col-sm-12 form-group">
+      <input id="from-phone" type="text" name="message[Телефон]" placeholder="Телефон *" required >
     </div>
     <div class="col-sm-12 form-group">
       <input id="from-email" type="email" name="fromEmail" placeholder="Email*" required value="{{ message.fromEmail ?? '' }}">
@@ -24,7 +27,7 @@
       {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
     </div>
     <div class="col-sm-12 form-group">
-      <textarea rows="10" cols="40" id="message" name="message" required placeholder="Сообщение*">{{ message.message ?? '' }}</textarea>
+      <textarea rows="10" cols="40" id="message" name="message[Сообщение]" required placeholder="Сообщение*">{{ message.message ?? '' }}</textarea>
       {{ message is defined and message ? errorList(message.getErrors('message')) }}
     </div>
     <div class="col-sm-12 form-group">

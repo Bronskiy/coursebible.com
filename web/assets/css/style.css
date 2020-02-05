@@ -2629,7 +2629,7 @@ template {
 .style-feature {
     margin: -15px;
     overflow: hidden;
-    justify-content: center;
+    justify-content: left;
 }
 
 .style-feature .feature-item {
@@ -2646,8 +2646,13 @@ template {
     .style-feature .feature-item {
         width: 33.33%;
     }
+    .teacher-related .style-feature .feature-item{
+      width: 50%;
+    }
 }
-
+.teacher-related .title{
+  margin-bottom: 20px;
+}
 .feature-item {
     padding: 15px;
 }
@@ -4256,10 +4261,9 @@ template {
 }
 
 .expert-single-content ul li::before {
-    content: "\f058";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 600;
-    color: #f0c4bb;
+    content: "\f113";
+    font-family: Flaticon;
+    color: #9a231f;
     font-size: 14px;
     margin-right: 10px;
 }
@@ -5464,9 +5468,9 @@ template {
 }
 .custom-button.active,
 .custom-button:hover {
-    background: transparent;
-    border-color: #ffffff;
-    color: #ffffff;
+    background: #ffffff;
+    border-color: #9a231f;
+    color: #9a231f;
 }
 
 .custom-button.active:hover {

@@ -21,6 +21,40 @@
             </div>
           </div>
         </article>
+        <section class="teacher-related feature-section padding-bottom padding-top">
+          <div class="container">
+            <h3 class="title">Преподает в секциях:</h3>
+            <div class="style-feature">
+
+              {% for entry in craft.entries().section('sections').relatedTo(entry).all() %}
+              <div class="feature-item">
+                <div class="feature-thumb">
+                  {% set image = entry.sectionImage.one() %}
+                  <a href="{{ entry.url }}">
+                    <img src="{% if image %}{{ image.getUrl('image350x270') }}{% else %}https://via.placeholder.com/350x270?text=Нет&nbsp;фото{% endif %}" alt="{{ entry.title }}">
+                  </a>
+                </div>
+                <div class="feature-content">
+                  <div class="feature-header">
+                    <h4 class="title"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
+                    <p>{{ entry.sectionDescription|striptags|slice(0, 250) ~ '...'  }}</p>
+                    <a href="{{ entry.url }}">Подробнее</a>
+                  </div>
+
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+            <!-- <div class="inner-pagination-wrapper d-flex flex-wrap justify-content-center">
+            <a href="classes.html"><i class="fas fa-angle-left"></i></a>
+            <a href="classes.html">03</a>
+            <a href="classes.html" class="active">04</a>
+            <a href="classes.html">05</a>
+            <a href="classes.html"><i class="fas fa-angle-right"></i></a>
+          </div> -->
+        </div>
+        </section>
       </div>
       <div class="col-lg-4">
         {% include "_includes/_sidebar" %}
@@ -28,4 +62,5 @@
     </div>
   </div>
 </div>
+
 {% endblock %}
